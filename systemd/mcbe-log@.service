@@ -4,7 +4,7 @@ Description=Post Minecraft Bedrock Edition server logs to chat @ %i
 Requisite=mcbe@%i.service
 
 [Service]
-ExecStart=/opt/MC/MCBElog.sh mcbe@%i
+ExecStart=/bedrock-server/mcbe2irc/log.sh mcbe@%i
 KillMode=process
 Restart=always
 Type=simple
