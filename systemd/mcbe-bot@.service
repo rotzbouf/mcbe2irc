@@ -5,12 +5,12 @@ Requisite=mcbe@%i.service network-online.target
 StartLimitIntervalSec=0
 
 [Service]
-ExecStart=/opt/MC/MCBE_Bot.sh -i %i_Bot
+ExecStart=/bedrock-server/mcbe2irc/bot.sh -i %i_Bot
 Restart=always
 RestartSec=5
 Type=simple
-User=mc
-WorkingDirectory=/opt/MC
+User=root
+WorkingDirectory=/bedrock-server
 
 [Install]
 # Start after mcbe@%i.service
