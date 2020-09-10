@@ -70,17 +70,17 @@ if [ -z "$instance" ]; then
 	instance=MCBE_Bot
 fi
 # Make directory and parents quietly
-mkdir -p ~/.MCBE_Bot
-buffer=~/.MCBE_Bot/${instance}Buffer
+mkdir -p /bedrock-server/MCBE_Bot
+buffer=/bedrock-server/MCBE_Bot/${instance}Buffer
 # Kill all doppelgangers
 # Duplicate bots exit if $buffer is removed
 rm -f "$buffer"
 mkfifo "$buffer"
 chmod 600 "$buffer"
-ping_time=~/.MCBE_Bot/${instance}Ping
+ping_time=/bedrock-server/MCBE_Bot/${instance}Ping
 touch "$ping_time"
 
-join_file=~/.MCBE_Bot/${instance}Join.txt
+join_file=/bedrock-server/MCBE_Bot/${instance}Join.txt
 chmod 600 "$join_file"
 join=$(grep -Ev '^[^ ]+:[0-9]+$' "$join_file")
 if ! server=$(grep -E '^[^ ]+:[0-9]+$' "$join_file"); then

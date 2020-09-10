@@ -51,9 +51,9 @@ fi
 
 # Trim off $service before last @
 instance=${service##*@}
-buffer=~mc/.MCBE_Bot/${instance}_BotBuffer
-join_file=~mc/.MCBE_Bot/${instance}_BotJoin.txt
-webhook_file=~mc/.MCBE_Bot/${instance}_BotWebhook.txt
+buffer=/bedrock-server/MCBE_Bot/${instance}_BotBuffer
+join_file=/bedrock-server/MCBE_Bot/${instance}_BotJoin.txt
+webhook_file=/bedrock-server/MCBE_Bot/${instance}_BotWebhook.txt
 chmod -f 600 "$webhook_file"
 
 send "Server $instance starting"
