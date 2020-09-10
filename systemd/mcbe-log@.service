@@ -1,0 +1,14 @@
+[Unit]
+After=mcbe@%i.service mcbe-bot@%i.service
+Description=Post Minecraft Bedrock Edition server logs to chat @ %i
+Requisite=mcbe@%i.service
+
+[Service]
+ExecStart=/opt/MC/MCBElog.sh mcbe@%i
+KillMode=process
+Restart=always
+Type=simple
+
+[Install]
+# Start after mcbe@%i.service
+WantedBy=mcbe@%i.service
